@@ -3,47 +3,33 @@ html {
 }
 
 body {
-  font-family: "Times New Roman", Times, serif;
   font-size: 16px;
   line-height: normal;
   color: black;
+  background-color: black;
 }
 
-.logo img {
-  vertical-align: baseline;
-}
-
-.btndona {
-  height: 60px;
-  width: 130px;
-  background-color: orange;
+a {
+  text-decoration: none;
   color: black;
-  border-radius: 0px;
-  border: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+}
+
+li {
+  padding: 10px;
+  color: whitesmoke;
   font-family:
     "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-
 }
 
-.hero h1 {
-  font-size: 2em;
-  font-weight: bold;
-  line-height: normal;
-  margin: 0.67em 0;
-}
-
-.donazione h2 {
-  font-size: 1.5em;
-  font-weight: bold;
-  line-height: normal;
-  margin: 0.83em 0;
-}
-
-.logo {
-  padding: 15px;
-}
-
+/* ---------- NAVBAR ---------- */
 .topbar {
   gap: 20px;
   position: fixed;
@@ -51,21 +37,44 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
-.main {
+.logo {
+  padding: 15px;
+}
+
+.logo img {
+  vertical-align: baseline;
+}
+
+.btndona {
+  display: inline-flex;
   align-items: center;
-  margin: 0;
-  top: 0;
+  justify-content: center;
+  height: 60px;
+  min-width: 130px;
+  padding: 0 24px;
+  background-color: orange;
+  color: black;
+  border-radius: 0;
+  border: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: 0.3s;
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.hero {
-  font-size: 75px;
-  top: 15%;
-  color: whitesmoke;
-  text-shadow: 5px 5px 10px black;
-  opacity: 75%;
+.btndona:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
+/* ---------- VIDEO HERO ---------- */
+.main {
+  margin: 0;
 }
 
 .video-wrap {
@@ -83,74 +92,72 @@ background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   transform: scale(var(--video-zoom));
 }
 
-.animali {
-  transition: 0.5s;
+/* ---------- SEZIONE PANDA ---------- */
+.sezione1 {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-.main:hover .animali {
-  color: orange;
-}
-
-.donazione {
-  font-size: 17px;
-  top: 95%; 
+/* .row2 è il riferimento per gli elementi posizionati in assoluto */
+.row2 {
+  position: relative;
   color: whitesmoke;
+}
+
+.row2 .img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.report {
   text-shadow: 5px 5px 10px black;
-  transition: 0.5s;
+  font-size: 50px;
+}
+
+#reportbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 41.66%;
+  padding: 80px;
+  padding-top: 250px;
+  text-align: left;
+}
+
+#reportbox2 {
+  position: absolute;
+  padding: 100px 0 0 0;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  text-shadow: 5px 5px 10px black;
+}
+
+/* Bottone "Read Now" a destra, centrato in verticale sul panda */
+#btnreadnow {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  z-index: 2;
+  padding: 14px 32px;
+  background-color: orange;
+  color: black;
   font-family:
     "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  opacity: 80%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.donazione a,
-.donazione a:hover {
-  color: whitesmoke;
-  text-decoration: none;
-}
-
-.main:hover .donazione:hover {
-  font-size: 18px;
-}
-
-u {
-  display: inline-block;
-  padding: 5px;
-}
-
-li {
-  padding: 10px;
-  color: whitesmoke;
-  font-family:
-    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-  display: flex;
-}
-
-a {
-  text-decoration: none;
+#btnreadnow:hover {
+  background-color: whitesmoke;
   color: black;
 }
 
-.hero,
-.donazione {
-  z-index: 1;
-}
-
-.video-wrap {
-  overflow: hidden;
-}
-
-.video-wrap video {
-  --video-zoom: 1.12; 
-  transform: scale(var(--video-zoom));
-}
+/* ---------- MOBILE ---------- */
 @media (max-width: 767.98px) {
   html,
   body {
@@ -161,45 +168,80 @@ a {
     gap: 0;
   }
 
+  /* Video: su mobile mostro tutto il fotogramma 16:9, senza ritaglio né zoom */
+  .main {
+    padding-top: 56px; /* spazio per la navbar fissa */
+  }
+
+  .video-wrap {
+    height: auto;
+  }
+
+  .video-wrap video {
+    --video-zoom: 1;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
   .logo {
     padding: 10px;
   }
 
   .logo img {
-    height: 40px;
+    height: 32px;
   }
 
   li {
-    padding: 8px;
-    font-size: 13px;
-  }
-  .main {
-    position: relative;
-  }
-
-  .hero {
-    left: 0;
-    width: 100%;
-    top: 45%;
-    transform: translateY(-50%);
-    font-size: 5vw;
-    padding: 0 10px;
-  }
-
-  .donazione {
-    top: auto;
-    bottom: 6px;
+    padding: 6px 5px;
     font-size: 12px;
-    width: max-content;
-    max-width: 95%;
   }
 
-  .donazione h2 {
-    margin: 0;
-    font-size: 1em;
+  .btndona {
+    height: 36px;
+    min-width: 0;
+    padding: 0 10px;
+    font-size: 12px;
   }
 
-  .main:hover .donazione:hover {
-    font-size: 13px;
+  #reportbox {
+    width: 70%;
+    padding: 20px;
+    padding-top: 40px;
+  }
+
+  .report {
+    font-size: 20px;
+  }
+
+  #reportbox2 {
+    padding-top: 10px;
+    font-size: 12px;
+  }
+
+  #btnreadnow {
+    right: 15px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Schermi molto piccoli */
+@media (max-width: 380px) {
+  .logo {
+    padding: 6px;
+  }
+
+  .logo img {
+    height: 26px;
+  }
+
+  li {
+    padding: 4px;
+    font-size: 11px;
+  }
+
+  .btndona {
+    padding: 0 8px;
+    font-size: 11px;
   }
 }
