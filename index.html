@@ -1,47 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WWF Landing Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container-fluid p-0">
-        <div class="row g-0">
-            <div class="col-12">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav
+      class="navbar navbar-expand flex-nowrap justify-content-start p-0 text-center topbar"
+    >
+      <div class="logo">
+        <img src="wwf_logo.png" alt="logo wwf" height="70" />
+      </div>
+      <ul class="d-flex m-0 p-0">
+        <li>Home</li>
+        <li>Donazioni</li>
+        <li>Contatti</li>
+      </ul>
+      <div class="d-flex align-items-center">
+        <a href="#" class="btndona">Dona Ora</a>
+      </div>
+    </nav>
 
-                <!-- NAVBAR -->
-                <nav class="navbar navbar-expand flex-nowrap justify-content-start p-0 text-center topbar">
-                    <div class="logo">
-                        <img src="wwf logo.png" alt="logo wwf" height="70px">
-                    </div>
-                    <ul class="d-flex m-0 p-0">
-                        <li>Home</li>
-                        <li>Donazioni</li>
-                        <li>Contatti</li>
-                    </ul>
-                    <div>
-                        <button class="btndona"><a href="#">Dona Ora</a></button>
-                    </div>
-                </nav>
-
-                <!-- MAIN -->
-                <div class="main">
-                    <div class="col-12 video-wrap">
-                        <video src="pixelbin-video.mp4" autoplay muted loop playsinline class="w-100"></video>
-                    </div>
-
-                    <div class="donazione position-absolute start-50 translate-middle-x text-center">
-                        <h2><a href="#"><u></u></a></h2>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+    <!-- VIDEO HERO -->
+    <div class="main">
+      <div class="video-wrap">
+        <video
+          src="pixelbin-video.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          class="w-100"
+        ></video>
+      </div>
     </div>
 
+    <!-- SEZIONE PANDA -->
+    <section class="sezione1">
+      <div class="row2">
+        <img class="img" src="img_1.png" alt="Panda che dorme su un tronco" />
+
+        <div id="reportbox">
+          <h1 class="report">
+            <em
+              ><strong>WWF Living Planet Report 2026:</strong> 73% decline in
+              wildlife Nature is disappearing</em
+            >
+          </h1>
+          <h1 id="reportbox2">
+            <i>— but it's not too late to turn it back!</i>
+          </h1>
+        </div>
+
+        <a id="btnreadnow" href="#">Read Now</a>
+      </div>
+    </section>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
