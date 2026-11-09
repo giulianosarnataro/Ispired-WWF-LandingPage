@@ -3,65 +3,153 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WWF Landing Page</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <title>WWF – Proteggiamo la natura, insieme</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- NAVBAR -->
-    <nav
-      class="navbar navbar-expand flex-nowrap justify-content-start p-0 text-center topbar"
-    >
-      <div class="logo">
-        <img src="wwf_logo.png" alt="logo wwf" height="70" />
-      </div>
+    <nav class="navbar navbar-expand flex-nowrap justify-content-start p-0 text-center topbar">
+      <a class="logo" href="#"><img src="wwf_logo.png" alt="WWF" height="70" /></a>
       <ul class="d-flex m-0 p-0">
-        <li>Home</li>
-        <li>Donazioni</li>
-        <li>Contatti</li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#aboutus">About Us</a></li>
+        <li><a href="#cosafacciamo">Progetti</a></li>
+        <li><a href="#contatti">Contatti</a></li>
       </ul>
-      <div class="d-flex align-items-center">
-        <a href="#" class="btndona">Dona Ora</a>
+      <div class="d-flex align-items-center ms-auto">
+        <a href="#dona" class="btndona">Dona Ora</a>
       </div>
     </nav>
 
-    <!-- VIDEO HERO -->
-    <div class="main">
+    <header class="main">
       <div class="video-wrap">
-        <video
-          src="pixelbin-video.mp4"
-          autoplay
-          muted
-          loop
-          playsinline
-          class="w-100"
-        ></video>
+        <video src="pixelbin-video.mp4" autoplay muted loop playsinline></video>
+        <div class="hero-text">
+          <h1>Il pianeta non ha un piano B.<br />Noi sì: agire adesso.</h1>
+          <a class="btn-orange" href="#dona">Sostieni la natura</a>
+        </div>
       </div>
-    </div>
+    </header>
 
-    <!-- SEZIONE PANDA -->
-    <section class="sezione1">
+    <section class="sezione1" id="news">
       <div class="row2">
         <img class="img" src="img_1.png" alt="Panda che dorme su un tronco" />
-
         <div id="reportbox">
-          <h1 class="report">
-            <em
-              ><strong>WWF Living Planet Report 2026:</strong> 73% decline in
-              wildlife Nature is disappearing</em
-            >
-          </h1>
-          <h1 id="reportbox2">
-            <i>— but it's not too late to turn it back!</i>
-          </h1>
+          <h2 class="report">
+            <strong>WWF Living Planet Report 2026:</strong> 73% di fauna selvatica in meno. La natura sta scomparendo
+          </h2>
+          <p id="reportbox2">…ma non è troppo tardi per invertire la rotta.</p>
         </div>
-
-        <a id="btnreadnow" href="#">Read Now</a>
+        <a id="btnreadnow" href="#">Leggi il report</a>
       </div>
     </section>
+
+    <section class="numeri">
+      <div class="container">
+        <div class="row text-center g-4">
+          <div class="col-12 col-md-4">
+            <p class="num">73%</p>
+            <p class="lab">calo medio delle popolazioni di fauna selvatica monitorate</p>
+          </div>
+          <div class="col-12 col-md-4">
+            <p class="num">1961</p>
+            <p class="lab">anno in cui è nato il WWF</p>
+          </div>
+          <div class="col-12 col-md-4">
+            <p class="num">100+</p>
+            <p class="lab">paesi in cui lavoriamo per la natura</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sezione2" id="aboutus">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-md-5">
+            <img class="img_2" src="img_2.jpg" alt="Cucciolo di otaria che nuota in acque cristalline" />
+          </div>
+          <div class="col-12 col-md-7">
+            <h2 class="titolo">Chi siamo</h2>
+            <p class="testo">
+              Dal 1961 il WWF protegge ecosistemi e specie in tutto il mondo. Lavoriamo con comunità, scienziati e
+              istituzioni per fermare la perdita di biodiversità e costruire un futuro in cui persone e natura
+              possano prosperare insieme.
+            </p>
+            <p class="testo">Resta aggiornato: ricevi le novità sui nostri progetti direttamente via email.</p>
+            <form class="newsletter" onsubmit="event.preventDefault(); this.querySelector('.esito').textContent='Grazie! Ti abbiamo iscritto alla newsletter.'; this.reset();">
+              <label for="nome">Nome</label>
+              <input id="nome" type="text" required autocomplete="given-name" />
+              <label for="email">Email</label>
+              <input id="email" type="email" required autocomplete="email" />
+              <button type="submit" class="btn-orange">Iscriviti alla newsletter</button>
+              <p class="esito" role="status"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="progetti" id="cosafacciamo">
+      <div class="container">
+        <h2 class="titolo">Cosa facciamo</h2>
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <article class="card-p">
+              <h3>Foreste</h3>
+              <p>Difendiamo gli habitat dove vivono panda, tigri e migliaia di altre specie, e contrastiamo la deforestazione.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-4">
+            <article class="card-p">
+              <h3>Oceani</h3>
+              <p>Promuoviamo una pesca sostenibile e aree marine protette per salvare i mari e chi li abita.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-4">
+            <article class="card-p">
+              <h3>Clima</h3>
+              <p>Spingiamo per energie pulite e politiche che riducano le emissioni e proteggano gli ecosistemi.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dona" id="dona">
+      <div class="container text-center">
+        <h2 class="titolo">Il tuo aiuto fa la differenza</h2>
+        <p class="testo mx-auto">Scegli quanto donare: ogni contributo finanzia progetti di tutela sul campo.</p>
+        <div class="importi" role="group" aria-label="Importo della donazione">
+          <a href="#" class="importo">10 €</a>
+          <a href="#" class="importo">25 €</a>
+          <a href="#" class="importo">50 €</a>
+          <a href="#" class="importo">100 €</a>
+        </div>
+        <a class="btn-orange" href="#">Dona Ora</a>
+      </div>
+    </section>
+
+    <footer id="contatti">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <img src="wwf_logo.png" alt="WWF" height="56" />
+            <p class="small mt-3">Per un futuro in cui l’umanità viva in armonia con la natura.</p>
+          </div>
+          <div class="col-6 col-md-4">
+            <h3>Contatti</h3>
+            <p class="small">info@wwf.example<br />+39 06 000 0000</p>
+          </div>
+          <div class="col-6 col-md-4">
+            <h3>Link utili</h3>
+            <p class="small"><a href="#news">News</a><br /><a href="#aboutus">Chi siamo</a><br /><a href="#dona">Dona</a></p>
+          </div>
+        </div>
+        <p class="copy">© 2026 WWF Landing Page. Progetto dimostrativo.</p>
+      </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
